@@ -12,13 +12,14 @@ def control(count, records):
         else:
             count += 1
             continue
-        device = {'device_type': device_name, 'ip': router_info[count][0], gtomy'username': u_name, 'password': pwd}
+        device = {'device_type': device_name, 'ip': router_info[count][0], 'username': u_name, 'password': pwd}
         try:
             net_connect = ConnectHandler(**device)
         except:
             print ('Connection refused to ' + router_info[count][0])
             count += 1
             continue
+#check if the router is core or provider edge router, router that starts with 'c' means core router which are cisco NCS series     
         if device_name == 'cisco_ios' and router_info[count][0][0].lower() == 'c':
             try:
                 cmd_output = net_connect.send_command("show hw-module fpd | exclude CURRENT")
@@ -29,6 +30,7 @@ def control(count, records):
 
                 count += 1
                 continue
+#check if the router is core or provider edge router, router that starts with 'p' means provider edge router which are cisco ASR series                 
         elif device_name == 'cisco_ios' and router_info[count][0][0].lower() == 'p':
             try:
                 cmd_output = net_connect.send_command("show hw-module fpd location all | e CURRENT")
