@@ -1,0 +1,10 @@
+Value Filldown Location (\S+)
+Value Filldown Card_type (\S+)
+Value Filldown Hw (\S+)
+Value Type (\w\w)
+Value Subtype (\S+)
+Value Inst (\S+)
+Value Status (\S+)
+
+Start
+  ^${Location}\s+${Card_type}\s+${Hw}\s+${Type}\s+${Subtype}\s+${Inst}\s+\S+\s+${Status} -> Next.Record

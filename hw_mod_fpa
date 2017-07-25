@@ -1,0 +1,7 @@
+Value Location (\S+)
+Value Card_type (\S+)
+Value FPD_device (\w+\s+\w+\s+\d+\s+\w+|\w+-\w+-\w+|\w+\s+\w+)
+Value Status (\w+\s+\w+)
+
+Start
+  ^${Location}\s+${Card_type}\s+(?:\S+\s+)?\s+${FPD_device}\s+(?:\w+\s+)?${Status} -> Record

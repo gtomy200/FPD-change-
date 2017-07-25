@@ -1,0 +1,4 @@
+Router_fqdn	device_type(either Cisco or Juniper)
+Demo data:
+pe01.cisco.com	Juniper
+
