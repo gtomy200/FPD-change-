@@ -42,7 +42,7 @@ def control(count, records):
 
 
 def router_list():
-    fo = open("routers.txt", 'r')
+    fo = open("test.txt", 'r')
     temp_list = []
     str = fo.readline()
     while str:
